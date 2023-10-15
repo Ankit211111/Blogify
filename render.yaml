@@ -5,3 +5,4 @@ services:
         value: production
     buildCommand: npm ci
     startCommand: npm start
+    env: nodeVersion: 18.16.0
