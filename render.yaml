@@ -1,0 +1,7 @@
+services:
+  - name: blogify
+    environment:
+      - key: NODE_ENV
+        value: production
+    buildCommand: npm ci
+    startCommand: npm start
