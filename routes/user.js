@@ -24,13 +24,18 @@ router.get("/signup",(req,res)=>{
 })
 
 router.post("/signup",upload.single("profileImage"),async(req,res)=>{
-    const {fullName,email,password} = req.body;
-     console.log(fullName+email+password);
+    const {fullName,email,password,profileImage} = req.body;
+     if(profileImage)
+       profilePic=`/images/${req.file.filename}`;
+    else{
+        profilePic= "/images/default.png"
+    }
+
    await User.create({
            fullName,
            email,
            password,
-           profileImageUrl:`/images/${req.file.filename}`
+           profileImageUrl:profilePic,
     })
     
     return res.redirect("/");

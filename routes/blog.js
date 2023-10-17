@@ -42,7 +42,7 @@ router.post("/comment/:blogId",async(req,res)=>{
 })
 router.post("/",upload.single("coverImage"),async(req,res)=>{
     const {body,title} = req.body;
-    console.log(req.file.filename)
+    
     const blog = await Blog.create({
         title,
         body,

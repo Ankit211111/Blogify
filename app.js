@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const {checkForAuthentication} = require("./middlewares/authentication.js")
 const blogRoute = require("./routes/blog")
 const Blog = require("./models/blog")
-mongoose.connect(process.env.MONGO_URL).then((e)=>console.log("mongo connected"))
+mongoose.connect(process.env.MONGO_URL).then((e)=>console.log("db connected"))
                                                      .catch((err)=>console.log("err"))
 
 const app = express();
@@ -30,5 +30,5 @@ app.get("/",async(req,res)=>{
 })
 app.use("/user",userRoute);
 app.use("/blog",blogRoute)
-app.listen(process.env.PORT,()=>console.log("SERVER STARTED"+process.env.PORT));
+app.listen(process.env.PORT,()=>console.log("SERVER STARTED"));
 
