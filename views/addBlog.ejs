@@ -13,18 +13,18 @@
     <form action="/blog" method="post" enctype="multipart/form-data">
         <div class="form-group mb-3">
             <label for = "coverImage">cover Image</label>
-            <input type="file" class="form-control" id="coverImage" name="coverImage" >
+            <input type="file" class="form-control" id="coverImage" name="coverImage"required >
             
         </div>
 
         <div class="form-group mb-3">
             <label for ="title">Title</label>
-            <input type ="text" class="form-control" id="title" name="title" aria-describedby="title" >    
+            <input type ="text" class="form-control" id="title" name="title" aria-describedby="title" required>    
 
           </div>
         <div class="form-group mb-3">
           <label for="Body">Body</label>
-          <textarea class="form-control" id="body" name="body" wrap="hard"></textarea>
+          <textarea class="form-control" id="body" name="body" wrap="hard" required></textarea>
           
         </div>
        
