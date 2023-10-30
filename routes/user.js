@@ -30,15 +30,22 @@ router.post("/signup",upload.single("profileImage"),async(req,res)=>{
     else{
         profilePic= "/images/default.png"
     }
-
-   await User.create({
-           fullName,
-           email,
-           password,
-           profileImageUrl:profilePic,
-    })
-    
-    return res.redirect("/");
+    const check = User.find({email})
+    if(check){
+        res.render("signin",{
+            error:"Already registered please login"
+        })
+    }
+   else{
+    await User.create({
+        fullName,
+        email,
+        password,
+        profileImageUrl:profilePic,
+ })
+ 
+ return res.redirect("/");
+   }
 })
 
 router.post("/signin",async(req,res)=>{
