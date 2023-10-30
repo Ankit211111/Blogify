@@ -30,8 +30,9 @@ router.post("/signup",upload.single("profileImage"),async(req,res)=>{
     else{
         profilePic= "/images/default.png"
     }
-    const check = User.find({email})
+    const check = await User.findOne({email})
     if(check){
+        
         res.render("signin",{
             error:"Already registered please login"
         })
