@@ -33,6 +33,9 @@ router.get("/:id",async(req,res)=>{
     })
 });
 router.post("/comment/:blogId",async(req,res)=>{
+    const {content} =req.body;
+    if(!content)
+    throw new Error("field cannot be empty");
     await Comment.create({
         content:req.body.content,
         blogId:req.params.blogId,
