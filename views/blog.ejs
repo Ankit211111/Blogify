@@ -26,10 +26,7 @@
 
         <div class="container mt-4">
             <form action="/blog/comment/<%= blog._id %>" method="post">
-                
-    
-                <div class="form-group mb-3">
-                    
+                <div class="form-group mb-3">  
                     <input type="text" class="form-control" id="content" name="content" placeholder="write your comments"  required > 
                     <button type="submit"  class="btn btn-primary mt-2">Add</button>             
                 </div>
@@ -38,13 +35,12 @@
     <% } %>
     <div class="container mt-4 ">
         <h1>Comments (<%= comments.length %>)</h1>
-            <% comments.forEach(comment => { %>
+              <% comments.forEach(comment => { %>
                 <img src="<%= comment.createdBy.profileImageUrl %>" width="50px"/>
                 <%= comment.createdBy.fullName %>:
                 <pre><%= comment.content %> </pre>
-               <% }) %>  
+               <% }) %>
     </div>
-
 
     <%- include("./partials/script.ejs") %>
 </body>
