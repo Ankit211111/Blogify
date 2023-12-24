@@ -31,7 +31,7 @@
                 <div class="form-group mb-3">
                     
                     <input type="text" class="form-control" id="content" name="content" placeholder="write your comments"  required > 
-                    <button type="submit" onclick=clearContentField() class="btn btn-primary mt-2">Add</button>             
+                    <button type="submit"  class="btn btn-primary mt-2">Add</button>             
                 </div>
            </form>          
         </div>
@@ -44,9 +44,7 @@
                 <pre><%= comment.content %> </pre>
                <% }) %>  
     </div>
-<% function clearContentField() { %>
-  <% document.getElementById("content").value = ""; %>
-<% } %>
+
 
     <%- include("./partials/script.ejs") %>
 </body>
